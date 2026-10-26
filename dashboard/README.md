@@ -6,15 +6,15 @@ The **`Software Request Management Dashboard`** provides an overview of software
 
 ### Software Request Operational Overview
 
-Displays the distribution of software requests by Requested Item State, provides an overview of software requests across their lifecycle states.
+Displays the distribution of software requests by Requested Item **State**, provides an overview of software requests across their lifecycle states.
 
 ### Approval & Fulfillment Outcome
 
-Displays Requested Item records grouped by Stage, provides a view of requests across the stages of the approval and fulfillment process.
+Displays Requested Item records grouped by **Stage**, provides a view of requests across the stages of the approval and fulfillment process.
 
 ### Software Request Demand Trend
 
-Displays the count of Requested Item records by month, using **Created date** as the time dimension to show monthly trends in software request demand.
+Displays the count of Requested Item records by **month**, using **Created date** as the time dimension to show monthly trends in software request demand.
 
 ### Software Request SLA Compliance
 
