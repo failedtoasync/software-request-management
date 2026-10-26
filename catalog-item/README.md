@@ -54,15 +54,3 @@ A Catalog UI Policy controls the visibility and mandatory behavior of the `pleas
 When the Operating System field is set to Other, the additional field becomes visible and mandatory. When another operating system is selected, the policy's reverse behavior restores the field's original visibility and mandatory settings.
 
 This ensures that users provide the additional operating system details only when they are needed.
-
-## 6. Validation
-
-The catalog item was tested to verify the following behavior:
-
-- Requested For defaults to the logged-in user.
-- Requested For can be changed to another user.
-- Selecting Other displays the additional operating system field and makes it mandatory.
-- Selecting a different operating system reverses the conditional field behavior.
-- The catalog item launches the configured `Software Request Fulfillment` flow.
-
-These checks confirm that the form collects the intended request information and supports the configured fulfillment process.
