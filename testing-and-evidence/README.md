@@ -1,38 +1,84 @@
 # Testing & Evidence — Software Request Management
 
-Testing covered catalog form behavior, approval and fulfillment paths, email notifications, Requested Item state transitions, SLA tracking, and dashboard reporting. All four primary end-to-end scenarios passed.
+Testing covered catalog form behavior, Flow Designer automation, approval decisions, fulfillment outcomes, email notifications, Requested Item state transitions, SLA tracking, and dashboard reporting. All four primary end-to-end scenarios passed.
 
 ## 1. Catalog Item Testing
 
-The Requested For field was verified to default to the logged-in user and remain editable when a request is submitted for someone else. The conditional operating system field was also tested: selecting **Other** displays the additional field and makes it mandatory, while selecting another operating system restores its original behavior.
+The **Software Request** catalog item was tested to verify its form behavior before submission. The `Default Requested For` client script populated the Requested For field with the logged-in user, while the field remained editable for requests submitted on behalf of someone else.
 
-## 2. End-to-End Workflow Testing
+The Catalog UI Policy was also verified. Selecting **Other** as the operating system displayed the additional operating system field and made it mandatory. Selecting another operating system restored the field's original visibility and mandatory behavior.
 
-**Successful fulfillment — Passed**
+[View Catalog Form](../screenshots/software-request-form.png)
 
-The manager and Product Owner approvals were granted in sequence. After both approvals, the RITM moved to Work in Progress, a Catalog Task was created, and successful fulfillment updated the RITM to Closed Complete. The requester received the completion email.
 
-**Manager rejection — Passed**
+## 2. Flow Designer — End-to-End Workflow Testing
 
-When the manager rejected the request, the flow ended without proceeding to Product Owner approval or fulfillment. The RITM was updated to Closed Incomplete, and the requester received a rejection email.
+The **`Software Request Fulfillment`** flow was tested across the complete request lifecycle, from catalog submission through approval and fulfillment to the final outcome. The flow retrieves catalog variables, sends requester emails, updates the Requested Item (RITM), manages sequential approvals, and creates a Catalog Task when the request is approved.
 
-**Product Owner rejection — Passed**
+### Successful Fulfillment
 
-After manager approval, the Product Owner rejected the request. The flow ended without proceeding to fulfillment, the RITM was updated to Closed Incomplete, and the requester received a rejection email.
+The flow processes the request through Manager approval followed by Product Owner approval. The RITM is updated to **Pending** while approvals are being processed. After both approvals are granted, the flow updates the RITM to **Work in Progress** and creates a Catalog Task for fulfillment.
 
-**Unsuccessful fulfillment — Passed**
+When the task follows the successful outcome path, the RITM is updated to **Closed Complete**, and a completion email is sent to the requester.
 
-After both approvals, the Catalog Task followed the unsuccessful outcome path. The RITM was updated to Closed Incomplete, and the requester received an email about the outcome.
+[View Manager Approval](../screenshots/ritm-manager-approval.png)
 
-## 3. Notifications & State Transitions
+[View Product Owner Approval](../screenshots/ritm-product-owner-approval.png)
 
-Email behavior was verified at request submission, approval stages, successful fulfillment, and rejection or unsuccessful outcomes. The RITM state transitions were also checked to confirm that requests move through Pending and Work in Progress as appropriate, ending in Closed Complete or Closed Incomplete according to the outcome.
+[View Fulfillment and Catalog Task](../screenshots/ritm-fulfillment-task-created.png)
+
+[View Successful Completion](../screenshots/ritm-closed-complete.png)
+
+[View Successful Fulfillment Execution](../screenshots/flow-successful-fulfillment.png)
+
+
+### Manager Rejection
+
+When the Manager rejects the request, the flow follows the rejection branch without proceeding to Product Owner approval or fulfillment. The RITM is updated to **Closed Incomplete**, a rejection email is sent to the requester, and the flow ends.
+
+[View Manager Rejection Execution](../screenshots/flow-manager-rejection.png)
+
+
+### Product Owner Rejection
+
+After the Manager approves the request, the flow proceeds to Product Owner approval. When the Product Owner rejects it, the flow ends without proceeding to fulfillment. The RITM is updated to **Closed Incomplete**, and a rejection email is sent to the requester.
+
+[View Product Owner Rejection Execution](../screenshots/flow-product-owner-rejection.png)
+
+
+### Unsuccessful Fulfillment
+
+After both approvals are granted, the flow creates a Catalog Task and follows the unsuccessful fulfillment outcome path. The RITM is updated to **Closed Incomplete**, and an email informing the requester of the outcome is sent.
+
+[View Unsuccessful Fulfillment Execution](../screenshots/flow-unsuccessful-fulfillment.png)
+
+
+## 3. Email Notifications
+
+Email behavior was verified at key points in the workflow, including initial request processing, approval rejection, successful fulfillment, and unsuccessful fulfillment. These emails are implemented using **Send Email actions within Flow Designer**, rather than separate Notification records.
+
+[View Email Notifications](../screenshots/workflow-email-notifications.png)
+
 
 ## 4. SLA Verification
 
-The `Software Request Fulfillment SLA` was verified as active and working with its two-day target and `8-5 weekdays` schedule. Testing confirmed that the SLA starts when the RITM enters Work in Progress, pauses in Pending, resumes in Work in Progress, and stops when the RITM reaches Closed Complete or Closed Incomplete.
+The `Software Request Fulfillment SLA` was verified as active and working with its two-day target and `8-5 weekdays` schedule.
+
+Testing confirmed that the SLA starts when the RITM enters **Work in Progress**, pauses when it enters **Pending**, resumes when it returns to **Work in Progress**, and stops when the RITM reaches **Closed Complete** or **Closed Incomplete**. This aligns SLA measurement with the configured fulfillment lifecycle.
+
+[View SLA Lifecycle](../screenshots/sla-in-progress-and-paused.png)
+
 
 ## 5. Dashboard Verification
 
-The `Software Request Management Dashboard` was verified as working with its four visualizations: request state distribution, approval and fulfillment stages, SLA compliance, and monthly request demand. The reports use Requested Item and Task SLA records to present the configured operational data.
+The `Software Request Management Dashboard` was verified with all four visualizations:
+
+- **Software Request Operational Overview:** Requested Items grouped by State.
+- **Approval & Fulfillment Outcome:** Requested Items grouped by Stage.
+- **Software Request SLA Compliance:** Completed Task SLA records for the `Software Request Fulfillment SLA`, grouped by `Has breached`.
+- **Software Request Demand Trend:** Requested Item count by month, using Created date.
+
+The dashboard uses Requested Item and Task SLA records to present request distribution, workflow stages, SLA compliance, and monthly demand.
+
+[View Dashboard](../screenshots/software-request-management-dashboard.png)
 
