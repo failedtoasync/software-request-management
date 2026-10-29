@@ -83,10 +83,10 @@ Detailed scenarios and supporting screenshots are documented separately in the t
 
 ## 5. Repository File Index
 
-The following files contain the configuration details, implementation logic, and technical explanations for the project's key components.
+The repository is organized by application component, with documentation, implementation scripts where applicable, and supporting screenshots.
 
-- [Catalog Item — LINK TO BE ADDED](LINK_TO_CATALOG_ITEM_README)
-- [Flow Designer — LINK TO BE ADDED](LINK_TO_FLOW_DESIGNER_README)
-- [SLA Configuration — LINK TO BE ADDED](LINK_TO_SLA_README)
-- [Dashboard — LINK TO BE ADDED](LINK_TO_DASHBOARD_README)
-- [Testing & Evidence — LINK TO BE ADDED](LINK_TO_TESTING_AND_EVIDENCE_README)
+- [**Catalog Item**](catalog-item/) — Catalog item configuration, variables, client scripting, and UI Policy.
+- [**Flow Designer**](flow-designer/) — Approval workflow, fulfillment automation, and email notifications.
+- [**SLA**](sla/) — SLA configuration and lifecycle conditions.
+- [**Dashboard**](dashboard/) — Dashboard purpose and visualization details.
+- [**Testing and Evidence**](testing-and-evidence/) — Test scenarios, results, and supporting screenshots.
