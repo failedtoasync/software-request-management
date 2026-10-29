@@ -70,4 +70,12 @@ The flow sends emails at key points in the lifecycle, including initial request 
 
 ---
 
-View the flow execution screenshots to see the results of the implemented automation: [Flow Execution Evidence](../screenshots/flow-designer/).
+## Flow Execution Screenshots
+
+[View Successful Fulfillment Execution](../screenshots/flow-successful-fulfillment.png)
+
+[View Manager Rejection Execution](../screenshots/flow-manager-rejection.png)
+
+[View Product Owner Rejection Execution](../screenshots/flow-product-owner-rejection.png)
+
+[View Unsuccessful Fulfillment Execution](../screenshots/flow-unsuccessful-fulfillment.png)
