@@ -26,3 +26,4 @@ When the request enters Work in Progress, the two-day SLA begins measuring elaps
 
 This lifecycle separates approval waiting time from active fulfillment time and provides a consistent basis for monitoring fulfillment performance.
 
+[View SLA Lifecycle](../screenshots/sla-in-progress-and-paused.png)
