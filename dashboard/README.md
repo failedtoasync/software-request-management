@@ -19,3 +19,5 @@ Displays the count of Requested Item records by **month**, using **Created date*
 ### Software Request SLA Compliance
 
 This visualization is based on Task SLA records and displays completed SLA records for the `Software Request Fulfillment SLA`. It filters records to the relevant SLA with **Stage = Completed** and groups them by **Has breached**, distinguishing SLAs completed within the target from those that breached it.
+
+[View Dashboard](../screenshots/software-request-management-dashboard.png)
