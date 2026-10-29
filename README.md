@@ -2,6 +2,17 @@
 
 A ServiceNow catalog-based solution that standardizes software requests through approval-driven fulfillment, automated notifications, SLA tracking, and dashboard reporting.
 
+## Technical Stack & Capabilities
+
+The solution combines standard ServiceNow capabilities with targeted catalog configuration to manage the software request lifecycle.
+
+- **Service Catalog:** Catalog item design, variables, reference fields, and conditional form behavior.
+- **Catalog Client Scripts & UI Policies:** Default field values and context-dependent form requirements.
+- **Flow Designer:** Sequential approvals, notifications, request updates, and fulfillment orchestration.
+- **Requested Items & Catalog Tasks:** Request lifecycle management and fulfillment tracking.
+- **SLA Management:** Time-based fulfillment target monitoring.
+- **Platform Analytics & Dashboards:** Operational reporting and request trend visibility.
+
 ## Table of Contents
 
 1. [Business Context & Solution](#1-business-context--solution)
@@ -11,9 +22,8 @@ A ServiceNow catalog-based solution that standardizes software requests through 
    - [SLA Tracking](#sla-tracking)
    - [Access & Platform Security](#access--platform-security)
    - [Operational Reporting](#operational-reporting)
-3. [Technical Stack & Capabilities](#3-technical-stack--capabilities)
-4. [Validation & Test Scenarios](#4-validation--test-scenarios)
-5. [Repository File Index](#5-repository-file-index)
+3. [Validation & Test Scenarios](#3-validation--test-scenarios)
+4. [Repository File Index](#4-repository-file-index)
 
 ---
 
@@ -57,18 +67,8 @@ The `Software Request Management Dashboard` provides an overview of request stat
 
 Together, these views support operational monitoring without requiring users to examine individual request records to understand the broader picture.
 
-## 3. Technical Stack & Capabilities
 
-The solution combines standard ServiceNow capabilities with targeted catalog configuration to manage the software request lifecycle.
-
-- **Service Catalog:** Catalog item design, variables, reference fields, and conditional form behavior.
-- **Catalog Client Scripts & UI Policies:** Default field values and context-dependent form requirements.
-- **Flow Designer:** Sequential approvals, notifications, request updates, and fulfillment orchestration.
-- **Requested Items & Catalog Tasks:** Request lifecycle management and fulfillment tracking.
-- **SLA Management:** Time-based fulfillment target monitoring.
-- **Platform Analytics & Dashboards:** Operational reporting and request trend visibility.
-
-## 4. Validation & Test Scenarios
+## 3. Validation & Test Scenarios
 
 The implementation was validated through four primary end-to-end scenarios:
 
@@ -81,7 +81,7 @@ Additional testing covered catalog form behavior, notification delivery, request
 
 Detailed scenarios and supporting screenshots are documented separately in the testing and evidence section.
 
-## 5. Repository File Index
+## 4. Repository File Index
 
 The repository is organized by application component, with documentation, implementation scripts where applicable, and supporting screenshots.
 
